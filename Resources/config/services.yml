@@ -1,0 +1,14 @@
+parameters:
+    cleverdev.banner.twig.extention.class: cleverdev\BannerBundle\Twig\BannerExtension
+    cleverdev.banner.services.banner.class: cleverdev\BannerBundle\Services\Banner
+
+services:
+    banner_service:
+        class: %cleverdev.banner.services.banner.class%
+        arguments: [ @doctrine.orm.entity_manager, @templating, %banner_options% ]
+
+    cleverdev.twig.banner_extension:
+        class: %cleverdev.banner.twig.extention.class%
+        arguments: [ @banner_service ]
+        tags:
+            - { name: twig.extension }

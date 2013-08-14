@@ -1,0 +1,11 @@
+{% spaceless %}
+{% for banner in banners %}
+    <a href="{{ path('banner_go', {'id': banner.id}) }}">
+        <img
+            width="{{ params.max_width }}"
+            height="{{ params.max_height }}"
+            src="{{ banner.banner }}"
+            alt="{{ banner.title }}">
+    </a>
+{% endfor %}
+{% endspaceless %}

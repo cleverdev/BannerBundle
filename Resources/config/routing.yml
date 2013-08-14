@@ -1,0 +1,3 @@
+banner_go:
+    pattern:  /banner/go/{id}
+    defaults: { _controller: BannerBundle:Banner:go }
